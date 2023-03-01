@@ -1,0 +1,1 @@
+Working on a small lab project I had to come out with the resource to be able share files between small group of people. In this article, I'll show you how to use Terraform to create a Linux machine that functions as a file share, to be accessible from my Windows 10 client. The script I used for samba, automates the process and makes it easy to get up and running quickly.
