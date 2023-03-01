@@ -4,7 +4,7 @@ Example:
 ```
 module "ec2-instance" {
   source  = "github.com/sahibgasimov/ec2-samba-file-share.git"
-  # insert the 5 required variables here
+  # insert required variables here
 
 
   ami = "ami-0557a15b87f6559cf"
