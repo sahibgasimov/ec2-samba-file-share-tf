@@ -19,7 +19,13 @@ module "ec2_instance" {
 
     groupadd share_users
     useradd --groups share_users --password mypass --user-group --no-create-home --shell /usr/sbin/nologin test
-    smbpasswd -a test
+    # Before launching the EC2 instance, you will need to create the parameter in the Parameter Store with the password value.
+    aws ssm put-parameter --name smb_password --value "NewSMBPassword" --type SecureString
+    # Retrieve the SMB password from the Parameter Store
+    SMB_PASSWORD=$(aws ssm get-parameters --names smb_password --with-decryption --query Parameters[0].Value --output text)
+
+    # Set the SMB password for the user
+    echo "$SMB_PASSWORD" | smbpasswd -s -a test
 
     echo "[share]
     path = /datastore/share
