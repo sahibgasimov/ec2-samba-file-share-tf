@@ -8,7 +8,7 @@ module "ec2_instance" {
   name          = "samba-file-share"
   instance_type = var.instance_type
   ami           = var.ami
-  vpc_security_group_ids = [module.security_group.name]
+  vpc_security_group_ids = [module.security_group.security_group_id]
   subnet_id = var.subnet_id
   key_name = var.key_name
   user_data = <<-EOF
