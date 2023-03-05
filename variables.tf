@@ -13,5 +13,5 @@ variable "key_name"  {}
 variable "volume_size"  {}
 variable "delete_on_termination"  {}
 variable "security_group" {
-    default = aws_security_group.samba_file_share.name
+    default = aws_security_group.samba_file_share.name_prefix
 }
