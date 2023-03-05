@@ -12,6 +12,6 @@ variable "subnet_id" {}
 variable "key_name"  {}
 variable "volume_size"  {}
 variable "delete_on_termination"  {}
-variable "security_group" {
-    default = module.security_group.id
-}
+#variable "security_group" {
+#    default = module.security_group.id
+#}
