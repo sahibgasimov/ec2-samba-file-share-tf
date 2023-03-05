@@ -7,7 +7,6 @@ module "ec2_instance" {
   version = "4.3.0"
   name          = "samba-file-share"
   instance_type = var.instance_type
-  vpc_id = data.aws_vpc.selected.id
   ami           = var.ami
   vpc_security_group_ids = [module.security_group.security_group_id]
   subnet_id = var.subnet_id
